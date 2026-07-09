@@ -98,7 +98,8 @@ const questions = {
 };
 
 const subjectButtons = document.querySelectorAll('.subject-btn');
-const startCard = document.getElementById('startCard');
+const homeCard = document.getElementById('homeCard');
+const stageCard = document.getElementById('stageCard');
 const gameCard = document.getElementById('gameCard');
 const resultCard = document.getElementById('resultCard');
 const startButton = document.getElementById('startButton');
@@ -198,10 +199,24 @@ function resetStageState() {
   updateStageDisplay();
 }
 
-function showStartScreen() {
-  startCard.classList.remove('hidden');
+function showHomeScreen() {
+  homeCard.classList.remove('hidden');
+  stageCard.classList.add('hidden');
   gameCard.classList.add('hidden');
   resultCard.classList.add('hidden');
+}
+
+function showStartScreen() {
+  homeCard.classList.add('hidden');
+  stageCard.classList.remove('hidden');
+  gameCard.classList.add('hidden');
+  resultCard.classList.add('hidden');
+}
+
+function startAdventure() {
+  showStartScreen();
+  resetStageState();
+  updateStats();
 }
 
 function selectSubject(subject) {
@@ -303,7 +318,8 @@ function startGame() {
   questionDeck = createQuestionDeck(questions[currentSubject]);
   resetStageState();
   updateStats();
-  startCard.classList.add('hidden');
+  homeCard.classList.add('hidden');
+  stageCard.classList.add('hidden');
   resultCard.classList.add('hidden');
   gameCard.classList.remove('hidden');
   showQuestion();
@@ -323,7 +339,10 @@ function showResult() {
   }
 }
 
-startButton.addEventListener('click', startGame);
+startButton.addEventListener('click', () => {
+  startAdventure();
+  startGame();
+});
 restartButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
   const questionsForSubject = questionDeck;
@@ -345,3 +364,4 @@ subjectButtons.forEach((button) => {
 });
 
 selectSubject(currentSubject);
+showHomeScreen();

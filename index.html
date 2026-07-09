@@ -35,16 +35,31 @@
           </div>
         </section>
 
-        <section class="subject-section">
-          <h2>科目を選ぶ</h2>
-          <div class="subject-buttons" id="subjectButtons">
-            <button class="subject-btn active" data-subject="math">数学</button>
-            <button class="subject-btn" data-subject="english">英語</button>
-            <button class="subject-btn" data-subject="science">理科</button>
+        <section id="homeCard" class="card home-card">
+          <div class="home-hero">
+            <div>
+              <p class="eyebrow">Study Quest</p>
+              <h3>今日の冒険を選ぼう</h3>
+              <p>科目を選んで、クイズを解きながら冒険を進めよう。</p>
+            </div>
+            <div class="home-emoji">✨</div>
+          </div>
+          <div class="subject-section">
+            <h4>科目を選ぶ</h4>
+            <div class="subject-buttons" id="subjectButtons">
+              <button class="subject-btn active" data-subject="math">数学</button>
+              <button class="subject-btn" data-subject="english">英語</button>
+              <button class="subject-btn" data-subject="science">理科</button>
+            </div>
+          </div>
+          <div class="home-preview">
+            <h4 id="subjectLabel">数学のクエスト</h4>
+            <p id="subjectDescription">公式を使って、短時間で解ける問題に挑戦します。</p>
+            <button id="startButton" class="primary-btn">この冒険を始める</button>
           </div>
         </section>
 
-        <section id="stageCard" class="stage-card">
+        <section id="stageCard" class="stage-card hidden">
           <div class="stage-top">
             <div>
               <p class="eyebrow">RPGステージ</p>
@@ -71,12 +86,6 @@
               </div>
             </div>
           </div>
-        </section>
-
-        <section id="startCard" class="card">
-          <h3 id="subjectLabel">数学のクエスト</h3>
-          <p id="subjectDescription">公式を使って、短時間で解ける問題に挑戦します。</p>
-          <button id="startButton" class="primary-btn">スタート</button>
         </section>
 
         <section id="gameCard" class="card hidden">
